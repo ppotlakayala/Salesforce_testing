@@ -1,0 +1,48 @@
+<!--
+This file is part of the Simple Lightning Components project, released under the MIT License.
+See LICENSE file or go to https://github.com/jongpie/LightningComponents for full license details.
+-->
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="showModal" type="Boolean" default="false" />
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="class" type="String" default="slds-modal_large" />
+    <aura:attribute name="primaryAction" type="Aura.Action" />
+    <aura:attribute name="primaryActionLabel" type="String" />
+    <aura:attribute name="primaryActionClass" type="String" />
+
+    <aura:if isTrue="{!v.showModal}">
+        <div class="slds-m-around--xx-large" style="top:20px;">
+            <div role="dialog" tabindex="-1" aria-labelledby="header99" class="{! 'slds-modal slds-fade-in-open ' + v.class}">
+                <div class="slds-modal__container">
+                    <!-- Start modal header -->
+                    <div class="slds-modal__header">
+                        <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+                            <lightning:icon iconName="utility:close" title="Close" variant="inverse" />
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="header99" class="slds-text-heading--medium">{!v.title}</h2>
+                    </div>
+                    <!-- End modal header -->
+
+                    <!-- Start modal body -->
+                    <div class="slds-modal__content slds-p-around--medium">
+                        {!v.body}
+                    </div>
+                    <!-- End modal body -->
+
+                    <!-- Start modal footer -->
+                    <aura:if isTrue="{!v.primaryAction != null}">
+                        <div class="slds-modal__footer">
+                            <lightning:button label="{!v.primaryActionLabel}" onclick="{!v.primaryAction}" class="{!'slds-button slds-button-brand ' + v.primaryActionClass}" />
+                        </div>
+                    </aura:if>
+                    <!-- End modal footer -->
+                </div>
+            </div>
+            <!-- Modal backup -->
+            <div class="slds-backdrop slds-backdrop--open"></div>
+
+        </div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,20 @@
+<!--
+This file is part of the Simple Lightning Components project, released under the MIT License.
+See LICENSE file or go to https://github.com/jongpie/LightningComponents for full license details.
+-->
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+    <!-- Public Attributes -->
+    <aura:attribute name="object" type="Object" required="true" />
+    <aura:attribute name="propertyName" type="String" required="true" />
+
+    <!-- Private Attributes -->
+    <aura:attribute name="displayValue" type="Object" access="private" />
+
+    <!-- Handlers-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!-- Markup -->
+    <ui:outputText value="{!v.displayValue}" />
+
+</aura:component>

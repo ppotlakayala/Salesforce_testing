@@ -1,0 +1,13 @@
+<!--
+This file is part of the Simple Lightning Components project, released under the MIT License.
+See LICENSE file or go to https://github.com/jongpie/LightningComponents for full license details.
+-->
+<aura:component extends="c.fieldMetadata">
+
+    <!-- Markup -->
+    <ui:outputText value="{!v.fieldMetadata.Label}" />
+    <aura:if isTrue="{!v.fieldMetadata.InlineHelpText != null}">
+        <lightning:helptext iconName="utility:info" content="{!v.fieldMetadata.InlineHelpText}" />
+    </aura:if>
+
+</aura:component>
