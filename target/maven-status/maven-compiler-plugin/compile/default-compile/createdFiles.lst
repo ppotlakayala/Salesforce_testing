@@ -1,0 +1,7 @@
+com\sonar\java\plugin\CustomRulesDefinition.class
+com\sonar\java\plugin\RulesList.class
+com\sonar\java\rules\VariableNameNotSUM.class
+com\sonar\java\plugin\CustomJavaRegistrar.class
+com\sonar\java\plugin\CustomJavaRulesEntry.class
+com\sonar\java\rules\MethodReturnTypeArgumentTypeShouldNotBeSame.class
+com\sonar\java\rules\UseStandardLengthVariableNameRule.class
